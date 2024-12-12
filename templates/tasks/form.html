@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task List</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <div class="container">
+             <form method="post">
+                {% csrf_token %}
+
+                        <h1>{% if tasks %} Update Task {% else %} Creat Task {% endif %}</h1>
+                        <label for="title">Task Title:<br><br>
+                            <input type="text" name="title" id="title" value = "{{ tasks.title }}">
+                        </label><br><br>
+
+                        <label for="date">Due Date:<br><br>
+                            <input type="date" name="date" id="date" value = "{{ tasks.date }}">
+                        </label><br><br>
+
+                        <label for="content">Description:<br><br>
+                            <textarea type="text" name="content" id="content">{{ tasks.content }}</textarea>
+                        </label><br><br>
+
+                        {% if tasks %}
+                            <button type ='submit' class="button">Update Task</button><br><br>
+                            <a href="{{ tasks.get_detail_url }}">Back to Task detail</a><br><br><br>
+                        {% else %}
+                            <button type ='submit' class="button">Create Task</button><br><br>
+                            <a href="{% url 'tasks:list' %}" class="animated-link">Back to Task list</a><br><br><br>
+                        {% endif %}
+
+
+             </form>
+        </div>
+    </body>
+</html>

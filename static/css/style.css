@@ -1,0 +1,41 @@
+body, h1, h2, h3, p, ul, li {
+    padding: 0;
+    margin: 0;
+
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+    margin-top: 60px;
+    font-family: sans-serif;
+    border: 1px solid black;
+    padding: 13px;
+    border-radius: 5px;
+
+}
+
+.container a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.button:hover {
+    background-color: black;
+    color: coral;
+}
+
+.button {
+    cursor: pointer;
+
+}
+
+.button {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.container h1 {
+    padding: 15px 0;
+}
